@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.nuxt-icon svg{
+  width: 1em !important;
+  height: 1em !important;
+  margin-bottom: 0em !important;
+  vertical-align: auto !important;
+}
+
 html {
   box-sizing: border-box;
   margin: 0;

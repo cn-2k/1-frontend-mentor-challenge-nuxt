@@ -7,12 +7,25 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
   },
-  css: ['@/assets/scss/main.scss'],
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/google-fonts', '@nuxt/image'],
+
+  css: ['~/assets/scss/main.scss'],
+
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+    'nuxt-tailwind-lightbox',
+    'nuxt-icons',
+    'nuxt-headlessui',
+    '@pinia/nuxt',
+  ],
+
   eslint: {
     lintOnStart: false,
     formatter: 'visualstudio',
   },
+
   googleFonts: {
     families: {
       'Kumbh Sans': {
@@ -20,13 +33,22 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  tailwindcss: {},
+
+  headlessui: {
+    prefix: 'Headless',
+  },
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   ssr: false,
+
   devtools: {
     enabled: true,
     timeline: {

@@ -65,16 +65,10 @@
 
 <script lang="ts" setup>
 import { useCartStore } from '@/store/cart';
+import { formatCurrency } from '@/utils/formatCurrency';
 import image1 from '@/assets/images/image-product-1.jpg';
 
 const cart = useCartStore();
-
-const formatCurrency = (value: number) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  }).format(value);
-};
 </script>
 
 <style></style>

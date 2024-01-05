@@ -21,14 +21,12 @@
     </div>
     <div class="w-full desktop:flex desktop:gap-4 items-center">
       <div class="w-full bg-neutral-light-grayish-blue h-0.5 p-6 rounded-lg mt-4 flex justify-between items-center">
-        <!-- <img class="cursor-pointer" src="~/assets/images/icon-minus.svg" alt="Minus" /> -->
         <nuxt-icon
           name="icon-minus"
           class="my-auto text-primary-orange hover:text-primary-orange/50 cursor-pointer"
           @click="cart.removeProductAmount"
         />
         <span class="font-bold text-neutral-very-dark-blue">{{ cart.product.amount }}</span>
-        <!-- <img class="cursor-pointer" src="~/assets/images/icon-plus.svg" alt="Plus" /> -->
         <nuxt-icon
           name="icon-plus"
           class="text-primary-orange hover:text-primary-orange/50 cursor-pointer"
@@ -50,27 +48,28 @@
 
 <script setup lang="ts">
 import { useCartStore } from '@/store/cart';
+import { formatCurrency } from '@/utils/formatCurrency';
 
 const cart = useCartStore();
 
 const product = ref({
   title: 'Fall Limited Edition Sneakers',
-  price: 250,
+  price: 300,
   basePrice: 280,
   discount: 50,
   amount: 1,
 });
 
 onMounted(() => {
-  cart.product = product.value;
-});
+  const cartStorage = JSON.parse(localStorage.getItem('cart') || '[]').cart;
+  const cartArray = cartStorage.filter((i: any) => i.title === product.value.title);
 
-const formatCurrency = (value: number) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  }).format(value);
-};
+  if (cartArray.length) {
+    cart.product = cartArray[0];
+  } else {
+    cart.product = product.value;
+  }
+});
 </script>
 
 <style scoped></style>

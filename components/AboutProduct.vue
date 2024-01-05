@@ -65,11 +65,20 @@ onMounted(() => {
 });
 
 const getProductInfo = () => {
-  const cartStorageJSON = localStorage.getItem('cart') || '';
-  const cartStorage = JSON.parse(cartStorageJSON).cart || [];
-  const cartArray = cartStorage.filter((item: any) => item.title === product.value.title);
+  const storage = localStorage.getItem('cart');
 
-  cart.product = cartArray.length ? cartArray[0] : product.value;
+  if (storage) {
+    const cartStorage = JSON.parse(localStorage.getItem('cart') || '[]').cart;
+    const cartArray = cartStorage.filter((i: any) => i.title === product.value.title);
+
+    if (cartArray.length) {
+      cart.product = cartArray[0];
+    } else {
+      cart.product = product.value;
+    }
+  } else {
+    cart.product = product.value;
+  }
 };
 </script>
 

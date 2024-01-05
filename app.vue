@@ -1,11 +1,11 @@
 <template>
-  <main class="desktop:px-96">
-    <HeaderLayout />
-    <div
-      class="w-full flex flex-col desktop:flex-row sm:justify-center sm:items-center desktop:gap-24 desktop:mt-20 desktop:px-10"
-    >
-      <NuxtTailwindLightbox :image-list="imageList" class="desktop:min-w-[400px]" />
-      <AboutProduct />
+  <main class="h-screen w-full flex justify-center items-center">
+    <div class="h-full mobile:w-full desktop:w-3/4">
+      <HeaderLayout />
+      <div class="w-full flex flex-col desktop:flex-row sm:justify-center sm:items-center desktop:gap-24 desktop:mt-20">
+        <NuxtTailwindLightbox :image-list="imageList" class="desktop:min-w-[400px]" />
+        <AboutProduct />
+      </div>
     </div>
   </main>
 </template>

@@ -21,19 +21,21 @@
       leave-from-class="translate-y-0 opacity-100"
       leave-to-class="translate-y-1 opacity-0"
     >
-      <HeadlessPopoverPanel class="absolute z-10 mt-3 w-96 -translate-x-1/2 transform bg-white">
+      <HeadlessPopoverPanel
+        class="absolute z-10 mobile:mt-8 rounded-lg desktop:mt-1 w-96 -translate-x-3/4 desktop:-translate-x-1/2 transform bg-white"
+      >
         <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
           <h4 class="font-bold p-6">Cart</h4>
           <hr />
           <div class="p-6">
-            <div v-if="cart.cart.length" class="w-full flex gap-4">
+            <div v-for="products in cart.cart" :key="products.title" class="w-full flex gap-4">
               <img :src="image1" class="rounded-lg" width="60px" />
               <div class="flex flex-col text-neutral-dark-grayish-blue">
                 <p>
-                  {{ cart.product.title }}
+                  {{ products.title }}
                 </p>
                 <p>
-                  {{ formatCurrency(cart.basePriceWithDiscount) }} x {{ cart.product.amount }}
+                  {{ formatCurrency(cart.basePriceWithDiscount) }} x {{ products.amount }}
                   <span class="font-bold text-black">{{ formatCurrency(cart.productPriceWithDiscount) }}</span>
                 </p>
               </div>
@@ -53,7 +55,7 @@
                 <p class="text-white font-bold">Checkout</p>
               </div>
             </button>
-            <p v-if="!cart.cart.length" class="text-neutral-500 font-bold text-center">Your cart is empty.</p>
+            <p v-if="!cart.cart.length" class="text-neutral-500 font-bold text-center p-16">Your cart is empty.</p>
           </div>
         </div>
       </HeadlessPopoverPanel>

@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     'nuxt-icons',
     'nuxt-headlessui',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
 
   eslint: {

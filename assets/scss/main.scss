@@ -53,3 +53,24 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+html,
+body,
+#app {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  outline: none;
+}

@@ -31,7 +31,7 @@
   </header>
   <div
     :class="{ 'translate-x-0': menuDrawer, '-translate-x-full': !menuDrawer }"
-    class="block md:hidden bg-white w-72 h-screen absolute z-50 top-0 shadow-xl p-7 transition-transform transform"
+    class="sidebar block md:hidden bg-white w-72 h-screen absolute z-50 top-0 shadow-xl p-7 transition-transform transform"
   >
     <div class="flex flex-col">
       <nuxt-icon
@@ -60,5 +60,3 @@ const toggleSidebar = () => {
   menuDrawer.value = !menuDrawer.value;
 };
 </script>
-
-<style scoped></style>

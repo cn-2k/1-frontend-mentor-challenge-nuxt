@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://1-frontend-mentor-challenge-nuxt.vercel.app/)
+- Live Site URL: [https://1-frontend-mentor-challenge-nuxt.vercel.app/](https://1-frontend-mentor-challenge-nuxt.vercel.app/)
 
 ### Built with
 

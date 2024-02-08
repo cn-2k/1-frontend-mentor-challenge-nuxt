@@ -5650,10 +5650,10 @@ nuxt-svgo@^3.7.0:
     mini-svg-data-uri "^1.4.4"
     svgo "^3.0.2"
 
-nuxt-tailwind-lightbox@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/nuxt-tailwind-lightbox/-/nuxt-tailwind-lightbox-1.0.6.tgz"
-  integrity sha512-uAuwjSQGzZESM5bQt137asY24Svpc5aEin+n1XSH7waYp7hZzUClOHC5RQ5v7665qd/aGoppp35yVsQ0ThjfEQ==
+nuxt-tailwind-lightbox@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/nuxt-tailwind-lightbox/-/nuxt-tailwind-lightbox-1.0.7.tgz"
+  integrity sha512-Ft2x4c2du4dtkxeGm4vNf3di/G11gQJMbUrKaQb1TyKv8pZJGvf3WMSMYSa3VRA1xyBGV7eoC1FJo+HJCBEAPw==
   dependencies:
     "@nuxt/kit" "^3.9.0"
     "@vueuse/nuxt" "^10.7.1"
